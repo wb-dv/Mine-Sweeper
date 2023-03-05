@@ -64,5 +64,29 @@ export const Utils = {
 
       return field;
     },
+
+    checkNeighbors(i, field, size) {
+      const neighbors = this.getNeighbors(i, size);
+      let res = false;
+
+      for (let i = 0; i < neighbors.length; i++) {
+        if (field[neighbors[i].x * size + neighbors[i].y] === -1) {
+          res = true;
+          break;
+        }
+      }
+
+      return res;
+    },
+
+    getAmountNeighborsBomb(i, field, size) {
+      const neighbors = this.getNeighbors(i, size);
+
+      let bombNeighborsCount = neighbors.reduce((bombCount, neighbor) => {
+        return field[neighbor.x * size + neighbor.y] === -1 ? ++bombCount : bombCount;
+      }, 0);
+
+      return bombNeighborsCount;
+    },
   },
 };

@@ -5,13 +5,10 @@ const StyledCell = styled(StyledSprite)`
   width: 32px;
   height: 32px;
 
-  ${({ isChecked, cellValue, isMarked, mark }) => {
+  ${({ isChecked, cellValue, isMarked, mark, isPressed }) => {
     if (isMarked) {
       return css`
         background-position: ${-34 * (mark + 1)}px calc(100% + 34px);
-        &:active {
-          background-position: ${-34 * (mark + 1)}px calc(100% + 34px);
-        }
       `;
     } else if (isChecked) {
       return css`
@@ -49,9 +46,7 @@ const StyledCell = styled(StyledSprite)`
     } else {
       return css`
         background-position: 0 calc(100% + 34px);
-        &:active {
-          background-position: -34px calc(100% + 34px);
-        }
+        ${isPressed && `background-position: -34px calc(100% + 34px);`};
       `;
     }
   }}
