@@ -13,35 +13,6 @@ const StyledCell = styled(StyledSprite)`
     } else if (isChecked) {
       return css`
         background-position: ${checkedCoordinates[cellValue][0]}px ${checkedCoordinates[cellValue][1]};
-        &&:nth-child(-n + 16)::after {
-          content: '';
-          display: block;
-          height: 5px;
-
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 3px;
-
-          background-color: #c0c0c0;
-        }
-
-        &&:first-child::after {
-          left: 0;
-        }
-
-        &&:nth-child(16n + 1)::before {
-          content: '';
-          display: block;
-          width: 4px;
-
-          position: absolute;
-          top: 2px;
-          bottom: 0;
-          left: 0;
-
-          background-color: #c0c0c0;
-        }
       `;
     } else {
       return css`
@@ -53,6 +24,8 @@ const StyledCell = styled(StyledSprite)`
 `;
 
 const checkedCoordinates = {
+  '-3': [-34 * 7, 'calc(100% + 34px)'],
+  '-2': [-34 * 6, 'calc(100% + 34px)'],
   '-1': [-34 * 5, 'calc(100% + 34px)'],
   0: [-34, 'calc(100% + 34px)'],
   1: [0, '100%'],
@@ -63,8 +36,6 @@ const checkedCoordinates = {
   6: [-34 * 5, '100%'],
   7: [-34 * 6, '100%'],
   8: [-34 * 7, '100%'],
-  9: [-34 * 2, 'calc(100% + 34px)'],
-  10: [-34 * 3, 'calc(100% + 34px)'],
 };
 
 export default StyledCell;

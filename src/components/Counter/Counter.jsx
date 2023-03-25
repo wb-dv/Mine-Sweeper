@@ -17,7 +17,7 @@ function Counter({ counterValue, digit }) {
   return (
     <StyledCounter>
       {counterValues.map((value, i) => (
-        <StyledCounterItem as="div" value={value} key={i} />
+        <StyledCounterItem value={value} key={i} />
       ))}
     </StyledCounter>
   );

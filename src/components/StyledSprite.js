@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import sprite from '../minesweeper_sprites.png';
 
-const StyledSprite = styled.button`
+const StyledSprite = styled.div`
   overflow: hidden;
   position: relative;
 

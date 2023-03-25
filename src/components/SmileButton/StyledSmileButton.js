@@ -9,13 +9,11 @@ const StyledSmileButton = styled(StyledSprite)`
     background-position: -54px -48px;
   }
 
-  ${({ value }) =>
-    css`
-      background-position: ${coordinates[value]}px -48px;
-    `}
+  ${({ value }) => css`
+    background-position: ${coordinates[value]}px -48px;
+  `}
 `;
 
-// ${coordinates[value]}
 const coordinates = [0, -54 * 1, -54 * 2, -54 * 3, -54 * 4];
 
 export default StyledSmileButton;

@@ -27,7 +27,7 @@ function SmileButton() {
     if (reseting) setSmileType(0);
   }
 
-  return <StyledSmileButton value={smileType} onClick={resetGame}></StyledSmileButton>;
+  return <StyledSmileButton as="button" value={smileType} onClick={resetGame}></StyledSmileButton>;
 }
 
 export default SmileButton;
